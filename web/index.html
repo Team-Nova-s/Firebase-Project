@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!--
+    If you are serving your web app in a path other than the root, change the
+    href value below to reflect the base path you are serving from.
+    -->
+    <base href="$FLUTTER_BASE_HREF" />
+
+    <meta charset="UTF-8" />
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible" />
+    <meta name="description" content="A new Flutter project." />
+
+    <!-- iOS meta tags & icons -->
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-title" content="papela" />
+    <link rel="apple-touch-icon" href="icons/Icon-192.png" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png" />
+
+    <title>papela</title>
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <!-- Firebase initialization (before flutter_bootstrap.js) -->
+    <script type="module">
+      // Import the Firebase SDKs you need
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+      import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-analytics.js";
+      import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-auth.js";
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+      import { getStorage } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-storage.js";
+
+      // Your web app's Firebase configuration
+      const firebaseConfig = {
+        apiKey: "AIzaSyAprT7t5_Z2W5XPjqCVocgMMFE1iL9TadE",
+        authDomain: "papela-backend.firebaseapp.com",
+        projectId: "papela-backend",
+        storageBucket: "papela-backend.appspot.com",
+        messagingSenderId: "879640093123",
+        appId: "1:879640093123:web:83a0eb8fd2a66c0ce49d76",
+        measurementId: "G-E7VYLEGSSW",
+      };
+
+      // Initialize Firebase
+      const app = initializeApp(firebaseConfig);
+      const analytics = getAnalytics(app);
+      const auth = getAuth(app);
+      const db = getFirestore(app);
+      const storage = getStorage(app);
+
+      // Optional: expose to window for debugging
+      window.firebaseServices = { app, analytics, auth, db, storage };
+    </script>
+
+    <!-- Flutter app bootstrap (load last) -->
+    <script src="flutter_bootstrap.js" async></script>
+  </body>
+</html>
