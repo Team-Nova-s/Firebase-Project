@@ -50,7 +50,6 @@ node_modules/
 firebase-debug.log
 
 # Credentials and keys
-AIzaSyAprT7t5_Z2W5XPjqCVocgMMFE1iL9TadE.json
 *.json
 .env
 *.env
