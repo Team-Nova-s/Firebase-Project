@@ -8,6 +8,16 @@ class ThemeProvider extends ChangeNotifier {
   static final DynamicSchemeVariant dynamicSchemeVariant = DynamicSchemeVariant.rainbow;
   static final textTheme = GoogleFonts.ralewayTextTheme();
 
+  ThemeMode _themeMode = ThemeMode.system;
+
+  ThemeMode get themeMode => _themeMode;
+  bool get isDarkMode => _themeMode == ThemeMode.dark;
+
+  void toggleTheme(bool isDark) {
+    _themeMode = isDark ? ThemeMode.dark : ThemeMode.light;
+    notifyListeners();
+  }
+
   static final lightTheme = ThemeData(
     colorScheme: ColorScheme.fromSeed(
       seedColor: seedColor,
