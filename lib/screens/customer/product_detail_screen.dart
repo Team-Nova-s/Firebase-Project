@@ -680,10 +680,7 @@ class _ProductDetailScreenState extends State<ProductDetailScreen> {
   Widget _buildRelatedProducts() {
     return Consumer<ProductProvider>(
       builder: (context, productProvider, child) {
-        final relatedProducts = productProvider.products
-            .where((p) => p.categoryId == product!.categoryId && p.id != product!.id)
-            .take(4)
-            .toList();
+        final relatedProducts = productProvider.getRelatedProducts(product!.categoryId, product!.id);
 
         if (relatedProducts.isEmpty) {
           return SizedBox.shrink();

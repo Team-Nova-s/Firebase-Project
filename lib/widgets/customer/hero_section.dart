@@ -13,8 +13,18 @@ class HeroSection extends StatelessWidget {
         gradient: LinearGradient(
           begin: Alignment.topLeft,
           end: Alignment.bottomRight,
-          colors: [Theme.of(context).colorScheme.primary, Theme.of(context).colorScheme.primary],
+          colors: [
+            Theme.of(context).colorScheme.primary,
+            Color(0xFF000051), // Deep Navy / Primary Dark
+          ],
         ),
+        boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.3),
+            blurRadius: 10,
+            offset: Offset(0, 4),
+          ),
+        ],
       ),
       child: Stack(
         children: [
