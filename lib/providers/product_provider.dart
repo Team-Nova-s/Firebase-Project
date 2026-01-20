@@ -127,6 +127,14 @@ class ProductProvider extends ChangeNotifier {
     notifyListeners();
   }
 
+  // Recommendations
+  List<ProductModel> getRelatedProducts(String categoryId, String excludeProductId) {
+    return _products
+        .where((product) => product.categoryId == categoryId && product.id != excludeProductId)
+        .take(4)
+        .toList();
+  }
+
   // Admin functions
   Future<bool> addProduct(ProductModel product) async {
     try {
