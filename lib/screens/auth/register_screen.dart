@@ -177,7 +177,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                               child: Container(
                                 padding: EdgeInsets.all(12),
                                 decoration: BoxDecoration(
-                                  color: AppColors.error,
+                                  color: AppColors.error.withValues(alpha: 0.1),
                                   borderRadius: BorderRadius.circular(8),
                                   border: Border.all(color: AppColors.error),
                                 ),
