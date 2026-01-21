@@ -11,7 +11,7 @@ import 'package:provider/provider.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await dotenv.load(fileName: ".env");
+  await dotenv.load(fileName: '.env');
   await Firebase.initializeApp(
     options: FirebaseOptions(
       apiKey: dotenv.env['FIREBASE_API_KEY'] ?? '',
